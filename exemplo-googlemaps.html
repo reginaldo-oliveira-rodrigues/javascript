@@ -1,0 +1,30 @@
+<!-- exemplo basico de uso do google maps -->
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+		<title>Exemplo de Uso do Google Maps</title>
+	</head>
+    <body onload="inicializa()" onunload="GUnload()">
+		<div style="text-align:center;">
+			<div id="mapa_base" style="width:83em; height:36em;"></div>
+		</div>
+		
+		
+		
+		
+		<!--Importando as bibliotecas responsaveis pelo carregamento do mapa-->
+		<script src="http://maps.google.com/maps?file=api&v=2&key=ABQIAAAAA1zVWI3ESCvfvPyWAkbUvhQREorghnrAns23OiGdgeHAgGTe-RTUTR69OBQ8N6LWAvq0VZi7X7LO5A" type="text/javascript">
+		</script>
+		<script type="text/javascript">
+			var map = null;
+			var geocoder = null;
+			function inicializa() {
+				if (GBrowserIsCompatible()) {
+					map = new GMap2(document.getElementById("mapa_base"));
+					map.setCenter(new GLatLng(-22.9035393, -43.2095869), 2);
+					geocoder = new GClientGeocoder();
+				}
+			}
+		</script>
+	</body>
+</html>
